@@ -45,13 +45,24 @@ public class DetailActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                //int random = (int)(Math.random()*3);
+                int random = (int)(Math.random()*3);
+                String result = ttsList.get(random);
 
                 //사용자가 입력한 텍스트를 이 배열변수에 담는다.
-                String mText;
-                if (etText.getText().length() > 0) { //한글자 이상 1
-                    mText = etText.getText().toString();
-                    mTextString = new String[]{mText};
+//                String mText;
+//                if (etText.getText().length() > 0) { //한글자 이상 1
+//                    mText = etText.getText().toString();
+//                    mTextString = new String[]{mText};
+//
+//                    //AsyncTask 실행
+//                    mNaverTTSTask = new NaverTTSTask();
+//                    mNaverTTSTask.execute(mTextString);
+//                } else {
+//                    Toast.makeText(DetailActivity.this, "텍스트를 입력하세요.", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+                if(result.length()>0){ //한글자 이상 1
+                    mTextString = new String[]{result};
 
                     //AsyncTask 실행
                     mNaverTTSTask = new NaverTTSTask();
