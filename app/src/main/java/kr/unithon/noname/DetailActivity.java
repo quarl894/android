@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +41,7 @@ public class DetailActivity extends AppCompatActivity{
         ttsList.add("저는 거의 다 익었어요");
         ttsList.add("오늘은 광합성 짱이에요");
 
+
         //버튼 클릭이벤트 - 클릭하면 에디터뷰에 있는 글자를 가져와서 네이버에 보낸다. MP3로 바꿔 달라고 ...
         btTTS.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,18 +51,6 @@ public class DetailActivity extends AppCompatActivity{
                 String result = ttsList.get(random);
 
                 //사용자가 입력한 텍스트를 이 배열변수에 담는다.
-//                String mText;
-//                if (etText.getText().length() > 0) { //한글자 이상 1
-//                    mText = etText.getText().toString();
-//                    mTextString = new String[]{mText};
-//
-//                    //AsyncTask 실행
-//                    mNaverTTSTask = new NaverTTSTask();
-//                    mNaverTTSTask.execute(mTextString);
-//                } else {
-//                    Toast.makeText(DetailActivity.this, "텍스트를 입력하세요.", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
                 if(result.length()>0){ //한글자 이상 1
                     mTextString = new String[]{result};
 
