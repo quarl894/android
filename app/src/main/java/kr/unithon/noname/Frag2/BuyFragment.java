@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import kr.unithon.noname.MyList.MyListAdapter;
 import kr.unithon.noname.MyList.Product;
 import kr.unithon.noname.R;
+import kr.unithon.noname.api.Api;
+import kr.unithon.noname.api.NetworkRequest;
 
 /**
  * Created by user on 2018-01-27.
@@ -36,8 +38,16 @@ public class BuyFragment extends Fragment {
         mcontext = getActivity();
         result2 = new ArrayList<>();
 
-        for(int i=0; i<10; i++){
-            result2.add(new Product2("http://tong.visitkorea.or.kr/cms/resource/74/2018174_image2_1.JPG","1","1","1",5000));
+        for (int i = 0; i < 10; i++) {
+            result2.add(
+                    new Product2(
+                            "http://www.farmtail.com/shopimages/farmtail/005019000006.jpg?1450922764",
+                            "채소",
+                            "배추",
+                            "셀팜농장 직거래 농산물",
+                            5000
+                    )
+            );
         }
     }
 
@@ -47,11 +57,12 @@ public class BuyFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_editprofile, container, false);
         mRecyclerview = rootView.findViewById(R.id.rView2);
         mRecyclerview.setHasFixedSize(true);
-        mGridLayoutManager = new GridLayoutManager(mcontext,2);
+        mGridLayoutManager = new GridLayoutManager(mcontext, 2);
         mRecyclerview.setLayoutManager(mGridLayoutManager);
-
-        myListAdapter2 = new MyListAdapter2(result2,mcontext);
+        myListAdapter2 = new MyListAdapter2(result2, mcontext);
         mRecyclerview.setAdapter(myListAdapter2);
+
+
         return rootView;
     }
 }
