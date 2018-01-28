@@ -55,18 +55,15 @@ public class LoginActivity extends BaseActivity {
                 , OAUTH_CLIENT_NAME
 
         );
-<<<<<<< HEAD
-        authLoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        authLoginButton.setOnClickListener(v ->{
+            {
                 OAuthLogin.getInstance().startOauthLoginActivity(LoginActivity.this, mOAuthLoginHandler);
-                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
-=======
+        });
         authLoginButton.setOnClickListener(v -> {
             OAuthLogin.getInstance().startOauthLoginActivity(LoginActivity.this, mOAuthLoginHandler);
             startActivity(new Intent(LoginActivity.this,MainActivity.class));
->>>>>>> master
         });
         if (mOAuthLoginModule.getAccessToken(this) != null) {
             startActivity(new Intent(this,MainActivity.class));

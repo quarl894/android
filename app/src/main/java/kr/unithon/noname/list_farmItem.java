@@ -7,8 +7,6 @@ import android.os.Bundle;
  */
  // 농장 정보 들어갈 클래스
 public class list_farmItem {
-
-
  //메인이미지 // int 로 일단 -> url 로 변경 ?
 
     private String profile_image;
